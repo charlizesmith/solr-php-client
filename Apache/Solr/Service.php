@@ -1295,4 +1295,14 @@ class Apache_Solr_Service
 			throw new Apache_Solr_InvalidArgumentException("Unsupported method '$method', please use the Apache_Solr_Service::METHOD_* constants");
 		}
 	}
+	 public function searchIndex($query, $method = self::METHOD_GET)
+        {
+                if ($method == self::METHOD_GET)
+                {
+                        return $this->_sendRawGet($query);
+                } else
+                {
+                        throw new Apache_Solr_InvalidArgumentException("Unsupported method '$method', please use the Apache_Solr_Service::METHOD_* constants");
+                }
+        }
 }
