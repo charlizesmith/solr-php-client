@@ -258,7 +258,8 @@ class Apache_Solr_Service
 		}
 		else
 		{
-			$this->setCompatibilityLayer(new Apache_Solr_Compatibility_Solr3CompatibilityLayer);
+			//$this->setCompatibilityLayer(new Apache_Solr_Compatibility_Solr3CompatibilityLayer);
+			$this->setCompatibilityLayer(new Apache_Solr_Compatibility_Solr4CompatibilityLayer);
 		}
 
 		// check that our php version is >= 5.1.3 so we can correct for http_build_query behavior later
