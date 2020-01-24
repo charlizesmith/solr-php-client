@@ -151,6 +151,7 @@ class Apache_Solr_HttpTransport_FileGetContents extends Apache_Solr_HttpTranspor
 	
 	public function performPostRequest($url, $rawPost, $contentType, $timeout = false)
 	{
+		$url = str_replace("#/","",$url);
 		stream_context_set_option($this->_postContext, array(
 				'http' => array(
 					// set HTTP method
